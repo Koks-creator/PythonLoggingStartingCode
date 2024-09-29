@@ -18,3 +18,17 @@ class CustomLogger:
         logger.addHandler(file_handler)
 
         return logger
+
+if __name__ == '__main__':
+    cl = CustomLogger()
+    logger = cl.create_logger()
+    logger.debug('debug Spam message')
+    logger.debug('debug Spam message')
+    logger.info('info Ham message')
+    logger.warning('warn Eggs message')
+    logger.error('error Spam and Ham message')
+    logger.critical('critical Ham and Eggs message')
+    try:
+        c = 5 / 0
+    except Exception as e:
+        logger.error("Exception occurred", exc_info=True)
