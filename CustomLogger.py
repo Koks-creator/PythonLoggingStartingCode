@@ -1,3 +1,7 @@
+import logging
+from dataclasses import dataclass
+
+
 @dataclass
 class CustomLogger:
     format: str = "%(asctime)s - %(name)s - %(levelname)s - Line: %(lineno)s - %(message)s"
